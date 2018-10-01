@@ -2,3 +2,4 @@ java/RemoteSystemsTempFiles
 java/Algorithm/.*
 !.gitignore
 template.md
+.idea
