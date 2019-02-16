@@ -1,56 +1,50 @@
 ```
-package Stack;
+package greedy;
 
-import java.util.LinkedList;
+import java.util.*;
 
-public class WebPage {
-    public static void main (String[] args) {
+public class Conf {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        Map<Integer, Integer> confs = new HashMap<>();
 
-    }
+        for(int i=0; i<n; i++) {
+            int start = sc.nextInt();
+            int end = sc.nextInt();
 
-    public Boolean isIllegal (String input) {
-        TagStack tags = new TagStack();
-        char[] html = input.toCharArray();
-        String tag = "";
-        Boolean isOneTag = false;
-        for (int i=0; i<html.length; i++) {
-            if(html[i] == '<') {
-                tag += html[i];
-            } else if(html[i] == '>') {
-                tag += html[i];
-                tags.push(tag);
-                tag = "";
+            confs.put(end, start);
+        }
+
+        TreeMap<Integer,Integer> confsMap = new TreeMap<Integer, Integer>(confs);
+        Set<Integer> keyset = confsMap.keySet();
+        Iterator<Integer> keyiterator = confsMap.keySet( ).iterator( );
+
+        int k;
+        int v;
+
+        int confCnt = 0;
+        int endTime = 0;
+
+        while(keyiterator.hasNext()) {
+            k = (Integer)keyiterator.next();
+            v = (Integer)confsMap.get(k);
+            if(endTime == 0) {
+                confCnt++;
+                endTime = k;
+            } else {
+                if(v >= endTime) {
+                    confCnt++;
+                    endTime = k;
+                }
             }
         }
+
+        System.out.println(confCnt);
+
     }
 }
 
 
-class TagStack {
-    LinkedList<String> stack = new LinkedList<>();
-
-    public int size() {
-        return stack.size();
-    }
-
-    public int empty() {
-        return size()>0?0:1;
-    }
-    public void push (String data) {
-        stack.addLast(data);
-    }
-
-    public String pop() {
-        if (empty()==1) return "0";
-        String data = stack.getLast();
-        stack.removeLast();
-        return data;
-    }
-
-    public String top() {
-        if (empty()==1) return "0";
-        return stack.getLast();
-    }
-}
 ```
 
