@@ -1,5 +1,6 @@
 # 백준이나 프로그래머스에 있는 내용을 토대로 알고리즘 문제 풀이 파일을 만듬
 import requests
+from bs4 import BeautifulSoup 
 import tomd
 
 class AlgorithmMd():
@@ -20,6 +21,8 @@ class AlgorithmMd():
 		with open('template.md', 'r') as template_md:
 			template = template_md.read()
 
+		data = self.question_crawler()
+
 		template = template.format(
 			q_num=self.q_num,
 			lang=self.lang,
@@ -36,7 +39,38 @@ class AlgorithmMd():
 		print(template)
 
 	def question_crawler(self):
-		pass
+		url = AlgorithmMd.SITE[self.site]['base_url'] + str(self.q_num)
+		res = requests.get(url)
+		soup = BeautifulSoup(res.text, 'html.parser')
+
+		title = soup.select('#problem_title')[0]
+
+		problem_description = soup.select('#problem_description')[0]
+		problem_description = tomd.Tomd(str(problem_description)).markdown
+
+		problem_input = soup.select('#problem_input')[0]
+		problem_input = tomd.Tomd(str(problem_input)).markdown
+
+		problem_output = soup.select('#problem_output')[0]
+		problem_output = tomd.Tomd(str(problem_output)).markdown
+
+		sample_input= soup.select('#sample-input-1')[0]
+		sample_input = tomd.Tomd(str(sample_input)).markdown
+
+		sample_output = soup.select('#sample-output-1')[0]
+		sample_output = tomd.Tomd(str(sample_output)).markdown
+
+		data = {
+			'title': title,
+			'problem_description': problem_description,
+			'problem_input': problem_input,
+			'problem_output': problem_output,
+			'sample_input': sample_input,
+			'sample_output': sample_output
+		}
+
+		print(data)
+		return data
 
 
 if __name__ == '__main__':
