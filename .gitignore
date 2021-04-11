@@ -4,3 +4,4 @@ java/Algorithm/.*
 template.md
 .idea
 .DS_Store
+python/LeetCode/*.py
