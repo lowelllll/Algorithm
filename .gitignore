@@ -3,3 +3,4 @@ java/Algorithm/.*
 !.gitignore
 template.md
 .idea
+.DS_Store
