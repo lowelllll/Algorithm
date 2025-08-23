@@ -1,11 +1,9 @@
 import algorithm.Solution;
-import algorithm.bfs.MazeBFS;
-import algorithm.bfs.Tomato;
-import algorithm.dfs.MazeDFS;
+import algorithm.bfs.IslandBFS;
 
 public class Main {
     public static void main(String[] args) {
-        Solution s = new Tomato();
+        Solution s = new IslandBFS();
         s.solve();
     }
 }
