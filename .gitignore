@@ -5,3 +5,4 @@ archive/template.md
 .idea
 .DS_Store
 python/LeetCode/*.py
+java/.DS_Store
