@@ -1,7 +1,7 @@
-java/RemoteSystemsTempFiles
-java/Algorithm/.*
+풀이/java/RemoteSystemsTempFiles
+풀이/java/Algorithm/.*
 !.gitignore
-template.md
+archive/template.md
 .idea
 .DS_Store
 python/LeetCode/*.py
