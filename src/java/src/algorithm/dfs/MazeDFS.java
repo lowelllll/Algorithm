@@ -4,6 +4,21 @@ import algorithm.Solution;
 
 import java.util.Scanner;
 
+/**
+ * 미로탐색 (경로 개수 찾기)
+ *
+ * input:
+ * 0 0 0 0 0 0 0
+ * 0 1 1 1 1 1 0
+ * 0 0 0 1 0 0 0
+ * 1 1 0 1 0 1 1
+ * 1 1 0 1 0 0 0
+ * 1 0 0 0 1 0 0
+ * 1 0 1 0 0 0 0
+ *
+ * output:
+ * 8
+ */
 public class MazeDFS implements Solution {
     int[] dx = {-1, 0, 1, 0};
     int[] dy = {0, 1, 0, -1};

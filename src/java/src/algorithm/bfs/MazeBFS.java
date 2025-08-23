@@ -15,6 +15,21 @@ class Point{
     }
 
 }
+/**
+ * 미로의 최단 경로 찾기
+ *
+ * input:
+ * 0 0 0 0 0 0 0
+ * 0 1 1 1 1 1 0
+ * 0 0 0 1 0 0 0
+ * 1 1 0 1 0 1 1
+ * 1 1 0 1 0 0 0
+ * 1 0 0 0 1 0 0
+ * 1 0 1 0 0 0 0
+ *
+ * output:
+ * 12
+ */
 public class MazeBFS implements Solution {
     int[] dx = {-1, 0, 1, 0};
     int[] dy = {0, 1, 0, -1};
