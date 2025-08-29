@@ -2,11 +2,12 @@ import algorithm.Solution;
 import algorithm.bfs.IslandBFS;
 import algorithm.dfs.IslandDFS;
 import algorithm.dfs.PizzaDeliver;
+import algorithm.greedy.Merry;
 import algorithm.greedy.Player;
 
 public class Main {
     public static void main(String[] args) {
-        Solution s = new Player();
+        Solution s = new Merry();
         s.solve();
     }
 }
