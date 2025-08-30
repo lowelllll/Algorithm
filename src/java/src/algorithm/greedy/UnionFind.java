@@ -4,13 +4,29 @@ import algorithm.Solution;
 
 import java.util.Scanner;
 
+/**
+ * 친구인가?
+ * input:
+ * 9 7
+ * 1 2
+ * 2 3
+ * 3 4
+ * 1 5
+ * 6 7
+ * 7 8
+ * 8 9
+ * 3 8
+ *
+ * output:
+ * NO
+ */
 public class UnionFind implements Solution {
     int friendCount, intputCount;
     int[] unf;
 
     int find(int v) {
         if (v == unf[v]) return v;
-        else return find(unf[v]);
+        else return unf[v] = find(unf[v]); // unf[v] 지정시 경로 압축함
     }
 
     void union(int p, int q) {
