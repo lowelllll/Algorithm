@@ -2,14 +2,11 @@ import algorithm.Solution;
 import algorithm.bfs.IslandBFS;
 import algorithm.dfs.IslandDFS;
 import algorithm.dfs.PizzaDeliver;
-import algorithm.greedy.LectureSchedule;
-import algorithm.greedy.Merry;
-import algorithm.greedy.Player;
-import algorithm.greedy.UnionFind;
+import algorithm.greedy.*;
 
 public class Main {
     public static void main(String[] args) {
-        Solution s = new UnionFind();
+        Solution s = new Wonderland();
         s.solve();
     }
 }

@@ -32,7 +32,9 @@ public class UnionFind implements Solution {
     void union(int p, int q) {
         int fa = find(p);
         int fb = find(q);
-        unf[fa] = fb;
+        if (fa != fb) {
+            unf[fa] = fb;
+        }
     }
 
     @Override
