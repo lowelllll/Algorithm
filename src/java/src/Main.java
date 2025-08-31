@@ -6,7 +6,7 @@ import algorithm.greedy.*;
 
 public class Main {
     public static void main(String[] args) {
-        Solution s = new Dijkstra();
+        Solution s = new WonderlandPQ();
         s.solve();
     }
 }
