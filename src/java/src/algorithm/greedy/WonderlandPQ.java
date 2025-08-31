@@ -64,12 +64,13 @@ public class WonderlandPQ implements Solution {
             if (checked[node.v] == 0) {
                 checked[node.v] = 1;
                 answer+=node.cost;
-            }
-            for(Node next: totalNodes.get(node.v)){
-                if (checked[next.v] == 0) {
-                    pq.offer(next);
+                for(Node next: totalNodes.get(node.v)){
+                    if (checked[next.v] == 0) {
+                        pq.offer(next);
+                    }
                 }
             }
+
         }
 
         System.out.println(answer);
