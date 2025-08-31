@@ -29,6 +29,7 @@ public class SelectionSort implements Solution {
             arr[i] = sc.nextInt();
         }
 
+        // 선택정렬
         for (int i = 0; i < n; i++) {
             int index = i;
             for (int j = i; j < n; j++) {
