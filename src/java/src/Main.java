@@ -1,5 +1,6 @@
 import algorithm.Solution;
 import algorithm.dp.Stairs;
+import algorithm.dp.StoneBridge;
 import algorithm.searching.BinarySearch;
 import algorithm.sorting.BubbleSort;
 import algorithm.sorting.InsertionSort;
@@ -8,7 +9,7 @@ import algorithm.sorting.SelectionSort;
 
 public class Main {
     public static void main(String[] args) {
-        Solution s = new Stairs();
+        Solution s = new StoneBridge();
         s.solve();
     }
 }
