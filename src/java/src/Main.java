@@ -1,4 +1,5 @@
 import algorithm.Solution;
+import algorithm.dp.MaxSequence;
 import algorithm.dp.Stairs;
 import algorithm.dp.StoneBridge;
 import algorithm.searching.BinarySearch;
@@ -9,7 +10,7 @@ import algorithm.sorting.SelectionSort;
 
 public class Main {
     public static void main(String[] args) {
-        Solution s = new StoneBridge();
+        Solution s = new MaxSequence();
         s.solve();
     }
 }
