@@ -8,7 +8,7 @@ import algorithm.sorting.SelectionSort;
 
 public class Main {
     public static void main(String[] args) {
-        Solution s = new Coin();
+        Solution s = new MaxScore();
         s.solve();
     }
 }
