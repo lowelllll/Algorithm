@@ -11,7 +11,7 @@ import java.util.*
 
 class Alpha(val r: Int, val c: Int, val arr: Array<CharArray>) {
     // 65 ~
-    val alphaCh = IntArray(c) { 0 }
+    val alphaCh = IntArray(26) { 0 }
     val ch = Array(r) { IntArray(c) { 0 } }
     val aCode = 'A'.code
 
@@ -20,22 +20,21 @@ class Alpha(val r: Int, val c: Int, val arr: Array<CharArray>) {
     var answer = 0
 
     fun dfs(x: Int, y: Int, count: Int) { // 1로 시작
+        if (alphaCh[arr[x][y].code % aCode] == 1) return
+        alphaCh[arr[x][y].code % aCode] = 1
 
         for (i in 0 until dx.size) {
             val nx = x + dx[i]
             val ny = y + dy[i]
-            if (nx in 0 until r && ny in 0 until c && alphaCh[arr[nx][ny].code % aCode] == 0) {
-                alphaCh[arr[nx][ny].code % aCode] = 1
+            if (nx in 0 until r && ny in 0 until c && ch[nx][ny] == 0) {
+                ch[nx][ny] = 1
                 dfs(nx, ny, count + 1)
-                alphaCh[arr[nx][ny].code % aCode] = 0
+                ch[nx][ny] = 0
             }
         }
-
+        alphaCh[arr[x][y].code % aCode] = 0
         answer = maxOf(answer, count)
     }
-
-
-
 }
 
 fun main() {
@@ -49,6 +48,7 @@ fun main() {
     }
 
     val a = Alpha(r, c, arr)
+    a.ch[0][0] = 1
     a.dfs(0, 0, 1)
     println(a.answer)
 
